@@ -27,27 +27,33 @@ let canvas = Canvas(width: 400, height: 600)
 
 // COLORS
 let lightBlue = Color(hue: 193, saturation: 81, brightness: 84, alpha: 100)
+let transparentBlack = Color(hue: 0, saturation: 0, brightness: 0, alpha: 20)
+let black =  Color(hue: 0, saturation: 0, brightness: 0, alpha: 100)
 
 // Begin your solution here...
 canvas.fillColor = lightBlue
 canvas.drawEllipse(at: Point(x: 200, y: 300), width: 650, height: 800)
 
+  // TEXT
+   canvas.drawText(message: "saturday", at: Point(x:25, y:570), size: 9)
+  canvas.drawText(message: "october 16 1993/ 8 pm", at: Point(x:25, y:560), size: 9)
 
+   canvas.drawText(message: "mandela hall", at: Point(x:148, y:570), size: 9)
+  canvas.drawText(message: "at university of sussex", at: Point(x:148, y:560), size: 9)
+
+   canvas.drawText(message: "special guest", at: Point(x:275, y:570), size: 9)
+  canvas.drawText(message: "saldad, plus my life story", at: Point(x:275, y:560), size: 9)
+  canvas.drawText(message: "£6.50/£5.50 advance", at: Point(x:275, y:545), size: 9)
 
 // Blur text
-canvas.drawText(message: "blur", at: Point(x:25,y:350), size: 175, kerning: 10)
-
-
-// TEXT
- canvas.drawText(message: "saturday", at: Point(x:25, y:570), size: 9)
-canvas.drawText(message: "october 16 1993/ 8 pm", at: Point(x:25, y:560), size: 9)
-
- canvas.drawText(message: "mandela hall", at: Point(x:148, y:570), size: 9)
-canvas.drawText(message: "at university of sussex", at: Point(x:148, y:560), size: 9)
-
- canvas.drawText(message: "special guest", at: Point(x:275, y:570), size: 9)
-canvas.drawText(message: "saldad, plus my life story", at: Point(x:275, y:560), size: 9)
-canvas.drawText(message: "£6.50/£5.50 advance", at: Point(x:275, y:545), size: 9)
+   for i in stride (from: -40, through: 270, by: 8){
+    canvas.textColor = transparentBlack
+    canvas.drawText(message: "blur", at:
+    Point(x:10, y: i), size: 200)
+}
+    canvas.textColor = black
+    canvas.drawText (message: "blur", at:
+        Point(x:10, y: 290), size: 200)
 
 
 /*:
